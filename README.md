@@ -1,2 +1,2 @@
 # Laboratorio_2
-Exersisce and practive in Java lang
+Exercisce and practice in Java lang
