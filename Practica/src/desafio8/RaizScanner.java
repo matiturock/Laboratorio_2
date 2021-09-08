@@ -7,6 +7,7 @@ public class RaizScanner {
     System.out.println("Intoduce un número: ");
     Scanner s = new Scanner(System.in);
     int numero = s.nextInt();
+    s.close();
     double raiz = calcularRaiz(numero);
     System.out.println(String.format("La raiz de %d es %.2f", numero, raiz));
   }
