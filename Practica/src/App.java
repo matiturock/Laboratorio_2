@@ -5,7 +5,7 @@ public class App {
         float salario = 120.50f;
         boolean carnet = true;
 
-        System.out
-                .println(String.format("Nombre: %s, Edad: %d, Salario: $%.2f, Carnet: %b", nombre, edad, salario, carnet));
+        System.out.println(
+                String.format("Nombre: %s, Edad: %d, Salario: $%.2f, Carnet: %b", nombre, edad, salario, carnet));
     }
 }
