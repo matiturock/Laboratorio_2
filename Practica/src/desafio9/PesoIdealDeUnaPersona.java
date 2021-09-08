@@ -12,7 +12,7 @@ public class PesoIdealDeUnaPersona {
     int altura = scan.nextInt();
 
     System.out.println("Indique su género H-hombre / M-mujer:");
-    String generoStr = scan.nextLine().toLowerCase();
+    String generoStr = scan.next().toLowerCase();
     char generoChar = generoStr.charAt(0);
 
     scan.close();
