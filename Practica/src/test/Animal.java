@@ -11,3 +11,9 @@ public class Animal {
     return nombre;
   }
 }
+
+class Perros extends Animal {
+  public Perros(String nombre) {
+    super(nombre);
+  }
+}
