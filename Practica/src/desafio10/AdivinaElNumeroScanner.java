@@ -10,9 +10,11 @@ public class AdivinaElNumeroScanner {
 
     System.out.println("Existe un número oculto entre 1 y 100. Adivínalo!");
 
+    Scanner s = new Scanner(System.in);
+
     do {
       System.out.println("Ingresa un número entero:");
-      numeroUsuario = pedirNumeroUsuario();
+      numeroUsuario = s.nextInt();
 
       if (numeroOculto > numeroUsuario) {
         System.out.println("El número oculto es mayor");
@@ -24,12 +26,6 @@ public class AdivinaElNumeroScanner {
     } while (numeroOculto != numeroUsuario);
 
     System.out.println(String.format("Correcto! Lo has logrado en %d intentos.", cantidadIntentos));
-  }
-
-  private static int pedirNumeroUsuario() {
-    Scanner scan = new Scanner(System.in);
-    int numeroUsuario = Integer.parseInt(scan.nextLine());
-    scan.close();
-    return numeroUsuario;
+    s.close();
   }
 }
