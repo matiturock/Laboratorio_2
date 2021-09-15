@@ -12,7 +12,7 @@ public class AdivinaElNumero {
 
     JOptionPane.showMessageDialog(null, "Existe un número oculto entre 1 y 100. Adivínalo!");
     jugarAdivinarNumero();
-
+    // fin
   }
 
   public static void jugarAdivinarNumero() {
