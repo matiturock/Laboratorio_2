@@ -3,13 +3,19 @@ package desafio10;
 import javax.swing.JOptionPane;
 
 public class AdivinaElNumero {
-  public static void main(String[] args) {
-    int numeroOculto, numeroUsuario, cantidadIntentos = 0;
 
-    numeroOculto = (int) (Math.random() * 100);
+  static int numeroUsuario = 0;
+  static int cantidadIntentos = 0;
+  static int numeroOculto = (int) (Math.random() * 100);
+
+  public static void main(String[] args) {
 
     JOptionPane.showMessageDialog(null, "Existe un número oculto entre 1 y 100. Adivínalo!");
+    jugarAdivinarNumero();
 
+  }
+
+  public static void jugarAdivinarNumero() {
     do {
       numeroUsuario = Integer.parseInt(JOptionPane.showInputDialog("Ingresa un entero entre 1 y 100"));
 
