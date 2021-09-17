@@ -12,13 +12,16 @@ public class Estudiante extends Persona {
   public void modificarDatos() {
     Scanner s = new Scanner(System.in);
 
-    System.out.println("Modificando datos de Estudiante:");
+    System.out.println("Modificando datos de: " + this.toString());
     System.out.println("Ingresa el nombre:");
-    this.nombre = s.nextLine();
+    String nombre = s.nextLine();
+    this.setNombre(nombre);
     System.out.println("Ingresa el apellido:");
-    this.apellido = s.nextLine();
+    String apellido = s.nextLine();
+    this.setApellido(apellido);
     System.out.println("Ingresa el legajo:");
-    this.lejago = s.nextInt();
+    int legajo = s.nextInt();
+    this.setLegajo(legajo);
     System.out.println("Datos actualizados!");
 
     s.close();
@@ -26,7 +29,7 @@ public class Estudiante extends Persona {
 
   @Override
   public String toString() {
-    return "Estudiante [" + super.toString() + "]";
+    return "Estudiante:\n" + super.toString();
   }
 
 }

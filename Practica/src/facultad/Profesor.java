@@ -16,17 +16,22 @@ public class Profesor extends Persona {
   public void modificarDatos() {
     Scanner s = new Scanner(System.in);
 
-    System.out.println("Modificando datos de Estudiante:");
+    System.out.println("Modificando datos de: " + this.toString());
     System.out.println("Ingresa el nombre:");
-    this.nombre = s.nextLine();
+    String nombre = s.nextLine();
+    this.setNombre(nombre);
     System.out.println("Ingresa el apellido:");
-    this.apellido = s.nextLine();
+    String apellido = s.nextLine();
+    this.setApellido(apellido);
     System.out.println("Ingresa el legajo:");
-    this.lejago = s.nextInt();
-    System.out.println("Ingresa el básico:");
-    this.basico = s.nextDouble();
+    int legajo = s.nextInt();
+    this.setLegajo(legajo);
     System.out.println("Ingresa la antigüedad:");
-    this.antiguedad = s.nextInt();
+    int antiguedad = s.nextInt();
+    this.setAntiguedad(antiguedad);
+    System.out.println("Ingresa el basico:");
+    double basico = s.nextDouble();
+    this.setBasico(basico);
     System.out.println("Datos actualizados!");
 
     s.close();
@@ -34,12 +39,28 @@ public class Profesor extends Persona {
 
   @Override
   public String toString() {
-    return "Profesor [" + super.toString() + "]";
+    return "Profesor [" + super.toString() + ", básico=$" + this.basico + ", antigüedad=" + this.antiguedad + "]\n";
   }
 
   public double calcularSueldo() {
     double sueldo = this.antiguedad * this.basico;
     return sueldo;
+  }
+
+  public double getBasico() {
+    return basico;
+  }
+
+  public void setBasico(double basico) {
+    this.basico = basico;
+  }
+
+  public int getAntiguedad() {
+    return antiguedad;
+  }
+
+  public void setAntiguedad(int antiguedad) {
+    this.antiguedad = antiguedad;
   }
 
 }

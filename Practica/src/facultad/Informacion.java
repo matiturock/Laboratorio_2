@@ -2,8 +2,8 @@ package facultad;
 
 public interface Informacion {
 
-  public int verCantidad();
+  public abstract int verCantidad();
 
-  public String listarContenidos();
+  public abstract String listarContenidos();
 
 }
