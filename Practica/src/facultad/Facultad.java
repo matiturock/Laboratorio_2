@@ -36,7 +36,7 @@ public class Facultad implements Informacion {
   public String listarContenidos() {
     String str = "Listado de Carreras de la Facultad " + this.nombre + "\n";
     for (Carrera o : this.colCarreras) {
-      str += o + "\n";
+      str += o.getNombre() + "\n";
     }
     return str;
   }
@@ -58,6 +58,12 @@ public class Facultad implements Informacion {
       System.out.println("Carrera removida de la lista");
     else
       System.out.println("!La carrera no se encuentra en la lista: " + this.colCarreras.toString());
+  }
+
+  @Override
+  public String toString() {
+    String str = String.format("Facultad %s\n" + "%s", this.nombre.toUpperCase(), this.colCarreras);
+    return str;
   }
 
 }

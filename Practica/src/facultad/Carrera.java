@@ -61,7 +61,8 @@ public class Carrera implements Informacion {
 
   @Override
   public String toString() {
-    return "Carrera [colMaterias=" + colMaterias + ", nombre=" + nombre + "]\n";
+    String str = String.format("CARRERA %s\n" + "%s\n", this.nombre, this.colMaterias);
+    return str;
   }
 
   @Override
@@ -73,7 +74,7 @@ public class Carrera implements Informacion {
   public String listarContenidos() {
     String str = "Listado de Materias en la Carrera " + this.nombre + "\n";
     for (Materia o : this.colMaterias) {
-      str += o + "\n";
+      str += o.getNombre() + "\n";
     }
     return str;
   }

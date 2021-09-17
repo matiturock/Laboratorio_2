@@ -23,7 +23,8 @@ public class Materia implements Informacion {
   public String listarContenidos() {
     String str = "Listado de Estudiantes en la materia " + this.nombre + "\n";
     for (Estudiante est : this.colEstudiantes) {
-      str += est + "\n";
+      str += est.getApellido().toUpperCase();
+      str += " " + est.getNombre() + " \n";
     }
     return str;
   }
@@ -72,7 +73,9 @@ public class Materia implements Informacion {
 
   @Override
   public String toString() {
-    return "Materia [colEstudiantes=" + colEstudiantes + ", nombre=" + nombre + ", profesor=" + profesor + "]\n";
+    String str = String.format("Materia %s\n" + "%s\n" + "%s\n", this.nombre.toUpperCase(), this.profesor,
+        this.colEstudiantes);
+    return str;
   }
 
 }

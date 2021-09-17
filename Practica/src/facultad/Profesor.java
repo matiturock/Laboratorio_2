@@ -39,7 +39,9 @@ public class Profesor extends Persona {
 
   @Override
   public String toString() {
-    return "Profesor [" + super.toString() + ", básico=$" + this.basico + ", antigüedad=" + this.antiguedad + "]\n";
+    String str = String.format("Profesor:\n" + super.toString() + "\t-> Básico: $%.2f\n" + "\t-> Antigüedad: %d años\n",
+        this.basico, this.antiguedad);
+    return str;
   }
 
   public double calcularSueldo() {
