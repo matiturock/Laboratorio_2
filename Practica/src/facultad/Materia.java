@@ -5,24 +5,24 @@ import java.util.ArrayList;
 public class Materia implements Informacion {
   private String nombre;
   private Profesor profesor;
-  ArrayList<Estudiante> colEstudiantes;
+  ArrayList<Estudiante> coleccionEstudiantes;
 
-  public Materia(String nombre, Profesor profesor, ArrayList<Estudiante> colEstudiantes) {
+  public Materia(String nombre, Profesor profesor, ArrayList<Estudiante> coleccionEstudiantes) {
     this.nombre = nombre;
     this.profesor = profesor;
-    this.colEstudiantes = new ArrayList<>();
-    this.colEstudiantes = colEstudiantes;
+    this.coleccionEstudiantes = new ArrayList<>();
+    this.coleccionEstudiantes = coleccionEstudiantes;
   }
 
   @Override
   public int verCantidad() {
-    return this.colEstudiantes.size();
+    return this.coleccionEstudiantes.size();
   }
 
   @Override
   public String listarContenidos() {
     String str = "Listado de Estudiantes en la materia " + this.nombre + "\n";
-    for (Estudiante est : this.colEstudiantes) {
+    for (Estudiante est : this.coleccionEstudiantes) {
       str += est.getApellido().toUpperCase();
       str += " " + est.getNombre() + " \n";
     }
@@ -46,35 +46,35 @@ public class Materia implements Informacion {
   }
 
   public ArrayList<Estudiante> getColEstudiantes() {
-    return colEstudiantes;
+    return coleccionEstudiantes;
   }
 
-  public void setColEstudiantes(ArrayList<Estudiante> colEstudiantes) {
-    this.colEstudiantes = colEstudiantes;
+  public void setColEstudiantes(ArrayList<Estudiante> coleccionEstudiantes) {
+    this.coleccionEstudiantes = coleccionEstudiantes;
   }
 
   public void agregarEstudiante(Estudiante estudiante) {
-    this.colEstudiantes.add(estudiante);
+    this.coleccionEstudiantes.add(estudiante);
   }
 
   public void removerEstudiante(String nombreEstudiante) {
     boolean contiene = false;
-    for (Estudiante o : this.colEstudiantes) {
+    for (Estudiante o : this.coleccionEstudiantes) {
       if (o.getNombre() == nombreEstudiante) {
-        this.colEstudiantes.remove(o);
+        this.coleccionEstudiantes.remove(o);
         contiene = true;
       }
     }
     if (contiene)
       System.out.println("Estudiante removido");
     else
-      System.out.println("El estudiante no se encuentra en la lista");
+      System.out.println("!El estudiante no se encuentra en la lista");
   }
 
   @Override
   public String toString() {
     String str = String.format("Materia %s\n" + "%s\n" + "%s\n", this.nombre.toUpperCase(), this.profesor,
-        this.colEstudiantes);
+        this.coleccionEstudiantes);
     return str;
   }
 

@@ -4,11 +4,11 @@ import java.util.ArrayList;
 
 public class Facultad implements Informacion {
   private String nombre;
-  private ArrayList<Carrera> colCarreras;
+  private ArrayList<Carrera> coleccionCarreras;
 
-  public Facultad(String nombre, ArrayList<Carrera> colCarreras) {
+  public Facultad(String nombre, ArrayList<Carrera> coleccionCarreras) {
     this.nombre = nombre;
-    this.colCarreras = colCarreras;
+    this.coleccionCarreras = coleccionCarreras;
   }
 
   public String getNombre() {
@@ -20,36 +20,36 @@ public class Facultad implements Informacion {
   }
 
   public ArrayList<Carrera> getColCarreras() {
-    return colCarreras;
+    return coleccionCarreras;
   }
 
   public void setColCarreras(ArrayList<Carrera> colCarreras) {
-    this.colCarreras = colCarreras;
+    this.coleccionCarreras = colCarreras;
   }
 
   @Override
   public int verCantidad() {
-    return this.colCarreras.size();
+    return this.coleccionCarreras.size();
   }
 
   @Override
   public String listarContenidos() {
     String str = "Listado de Carreras de la Facultad " + this.nombre + "\n";
-    for (Carrera o : this.colCarreras) {
+    for (Carrera o : this.coleccionCarreras) {
       str += o.getNombre() + "\n";
     }
     return str;
   }
 
   public void agergarCarrera(Carrera carrera) {
-    this.colCarreras.add(carrera);
+    this.coleccionCarreras.add(carrera);
   }
 
   public void removerCarrera(String nombreCarrera) {
     boolean contiene = false;
-    for (Carrera o : colCarreras) {
+    for (Carrera o : coleccionCarreras) {
       if (o.getNombre() == nombreCarrera) {
-        this.colCarreras.remove(o);
+        this.coleccionCarreras.remove(o);
         contiene = true;
       }
     }
@@ -57,12 +57,12 @@ public class Facultad implements Informacion {
     if (contiene)
       System.out.println("Carrera removida de la lista");
     else
-      System.out.println("!La carrera no se encuentra en la lista: " + this.colCarreras.toString());
+      System.out.println("!La carrera no se encuentra en la lista: " + this.coleccionCarreras.toString());
   }
 
   @Override
   public String toString() {
-    String str = String.format("Facultad %s\n" + "%s", this.nombre.toUpperCase(), this.colCarreras);
+    String str = String.format("Facultad %s\n" + "%s", this.nombre.toUpperCase(), this.coleccionCarreras);
     return str;
   }
 
