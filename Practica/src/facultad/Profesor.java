@@ -33,6 +33,7 @@ public class Profesor extends Persona {
     double basico = s.nextDouble();
     this.setBasico(basico);
     System.out.println("Datos actualizados!");
+    System.out.println(this.toString());
 
     s.close();
   }

@@ -14,15 +14,16 @@ public class Estudiante extends Persona {
 
     System.out.println("Modificando datos de: " + this.toString());
     System.out.println("Ingresa el nombre:");
-    String nombre = s.nextLine();
+    String nombre = ValidacionDatos.ingresarSoloLetras(s);
     this.setNombre(nombre);
     System.out.println("Ingresa el apellido:");
-    String apellido = s.nextLine();
+    String apellido = ValidacionDatos.ingresarSoloLetras(s);
     this.setApellido(apellido);
     System.out.println("Ingresa el legajo:");
-    int legajo = s.nextInt();
+    int legajo = ValidacionDatos.ingresarLegajo(s);
     this.setLegajo(legajo);
     System.out.println("Datos actualizados!");
+    System.out.println(this.toString());
 
     s.close();
   }

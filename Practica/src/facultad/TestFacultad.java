@@ -33,6 +33,7 @@ public class TestFacultad {
     System.out.println(carrera1.listarContenidos());
     System.out.println(facultad1.listarContenidos());
 
-    // TODO test y controles de ingreso de datos erróneos
+    est1.modificarDatos();
   }
+
 }
