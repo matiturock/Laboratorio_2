@@ -1,5 +1,9 @@
 package tgn1;
 
+import java.util.List;
+
+import tgn1.utils.ValidacionDatos;
+
 public class Espectador extends Persona {
   private String fila;
   private Integer butaca;
@@ -21,7 +25,20 @@ public class Espectador extends Persona {
 
   @Override
   public String getTipo() {
-    return super.toString() + this.toString();
+    return String.valueOf(this.getClass());
+  }
+
+  static void cargarEspectdores(List<Espectador> listaEspectadores, Sala sala) {
+    if (sala.getEspectadores().size() >= sala.getCapacidad())
+      System.out.println("No se puede agregar más espectadores a la sala");
+    else {
+      Espectador nuevoEspectador = ValidacionDatos.crearEspectador();
+      if (nuevoEspectador != null) {
+        listaEspectadores.add(nuevoEspectador);
+        System.out.println("Espectador agregado!");
+      } else
+        System.out.println("No se pudo agregar espectador.");
+    }
   }
 
 }
