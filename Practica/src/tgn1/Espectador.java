@@ -16,7 +16,7 @@ public class Espectador extends Persona {
 
   @Override
   public String toString() {
-    return "Espectadores [butaca=" + butaca + ", fila=" + fila + "]";
+    return super.toString() + " es Espectador [butaca=" + butaca + ", fila=" + fila + "]";
   }
 
   @Override

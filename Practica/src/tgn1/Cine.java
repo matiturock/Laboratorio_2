@@ -3,6 +3,8 @@ package tgn1;
 import java.util.ArrayList;
 import java.util.List;
 
+import tgn1.utils.ValidacionDatos;
+
 public class Cine {
   public static void main(String[] args) {
     List<Espectador> listaEspectadores = new ArrayList<>();
@@ -25,24 +27,11 @@ public class Cine {
   }
 
   private static void cargarEspectdores(List<Espectador> listaEspectadores) {
-    String nombre = IngresoDatos.ingresarNombre();
-    if (nombre == null)
-      return;
-
-    Integer edad = IngresoDatos.ingresarEdad();
-    if (edad == null)
-      return;
-
-    String letraFila = IngresoDatos.ingresarFila();
-    if (letraFila == null)
-      return;
-
-    Integer nroButaca = IngresoDatos.IngresarButaca();
-    if (nroButaca == null)
-      return;
-
-    Espectador nuevoEspectador = new Espectador(nombre, edad, letraFila, nroButaca);
-    listaEspectadores.add(nuevoEspectador);
-    System.out.println("Espectador agregado!");
+    Espectador nuevoEspectador = ValidacionDatos.crearEspectador();
+    if (nuevoEspectador != null) {
+      listaEspectadores.add(nuevoEspectador);
+      System.out.println("Espectador agregado!");
+    } else
+      System.out.println("No se pudo agregar espectador.");
   }
 }
