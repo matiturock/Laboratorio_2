@@ -1,12 +1,12 @@
 package tgn1;
 
-import java.util.Arrays;
+import java.util.List;
 
 public class Sala {
   private Integer capacidad;
   private String pelicula;
   private String nombre;
-  private Espectador[] espectadores;
+  private List<Espectador> espectadores;
 
   public Sala(Integer capacidad, String nombre) {
     this.capacidad = capacidad;
@@ -17,17 +17,21 @@ public class Sala {
     this.pelicula = pelicula;
   }
 
-  public Espectador[] getEspectadores() {
+  public Integer getCapacidad() {
+    return this.capacidad;
+  }
+
+  public List<Espectador> getEspectadores() {
     return espectadores;
   }
 
-  public void setEspectadores(Espectador[] espectadores) {
+  public void setEspectadores(List<Espectador> espectadores) {
     this.espectadores = espectadores;
   }
 
   @Override
   public String toString() {
-    return "Salas [capacidad=" + capacidad + ", espectadores=" + Arrays.toString(espectadores) + ", nombre=" + nombre
+    return "Salas [capacidad=" + capacidad + ", espectadores=" + espectadores.toString() + ", nombre=" + nombre
         + ", pelicula=" + pelicula + "]";
   }
 

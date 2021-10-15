@@ -2,36 +2,45 @@ package tgn1;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
-import tgn1.utils.ValidacionDatos;
+import tgn1.generators.Inicializdores;
+import tgn1.utils.Mosrtrar;
 
 public class Cine {
   public static void main(String[] args) {
-    List<Espectador> listaEspectadores = new ArrayList<>();
 
-    cargarEspectdores(listaEspectadores);
+    Scanner scan = new Scanner(System.in);
+    Integer choice = -1;
 
-    mostrarEspectadores(listaEspectadores);
-  }
+    do {
+      Mosrtrar.mostrarMenuPrincipal();
 
-  private static void mostrarEspectadores(List<Espectador> listaEspectadores) {
-    System.out.println("\nMostrando lista de espectadores:");
+      Integer opcion = Integer.parseInt(scan.nextLine());
 
-    if (listaEspectadores.size() == 0)
-      System.out.println("No hay espectadores cargados.");
-    else {
-      for (Espectador espectador : listaEspectadores) {
-        System.out.println("->" + espectador);
+      switch (opcion) {
+        case 0:
+          System.out.println("Fin del programa...");
+          System.exit(0);
+          break;
+
+        case 1:
+          System.out.println("Mostrando estado de Cine:");
+          System.exit(0);
+          break;
+
+        case 2:
+          System.out.println("Creando sala:");
+          List<Espectador> espectadores = new ArrayList<>();
+          Sala sala1 = Inicializdores.crearSala(espectadores); // creada sala 1 con los atributos pedidos en la consigna
+          sala1.setPelicula("Joker");
+
+        default:
+          System.out.println("Opción incorrecta.");
+          break;
       }
-    }
-  }
+    } while (choice != 0);
 
-  private static void cargarEspectdores(List<Espectador> listaEspectadores) {
-    Espectador nuevoEspectador = ValidacionDatos.crearEspectador();
-    if (nuevoEspectador != null) {
-      listaEspectadores.add(nuevoEspectador);
-      System.out.println("Espectador agregado!");
-    } else
-      System.out.println("No se pudo agregar espectador.");
+    scan.close();
   }
 }

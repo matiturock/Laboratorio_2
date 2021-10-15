@@ -15,7 +15,7 @@ public class Empleado extends Persona {
 
   @Override
   public String getTipo() {
-    return super.toString() + this.toString();
+    return String.valueOf(this.getClass());
   }
 
   public void setSueldo(double sueldo) {
