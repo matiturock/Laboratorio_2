@@ -2,7 +2,7 @@ package facultad;
 
 import java.util.ArrayList;
 
-public class TestFacultad {
+class TestFacultad {
   public static void main(String[] args) {
     Profesor profe1 = new Profesor("Facundo", "Uferer", 123, 60_000, 3);
     Estudiante est1 = new Estudiante("Matías", "Almirón", 25_900);

@@ -58,17 +58,16 @@ public class Materia implements Informacion {
   }
 
   public void removerEstudiante(String nombreEstudiante) {
-    boolean contiene = false;
+
     for (Estudiante o : this.coleccionEstudiantes) {
       if (o.getNombre() == nombreEstudiante) {
         this.coleccionEstudiantes.remove(o);
-        contiene = true;
+        System.out.println("Estudiante removido");
+        break;
       }
     }
-    if (contiene)
-      System.out.println("Estudiante removido");
-    else
-      System.out.println("!El estudiante no se encuentra en la lista");
+
+    System.out.println("!El estudiante no se encuentra en la lista");
   }
 
   @Override
