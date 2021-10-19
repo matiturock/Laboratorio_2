@@ -3,43 +3,46 @@ package tgn1;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-
-import tgn1.generators.Inicializdores;
-import tgn1.utils.Mosrtrar;
+import tgn1.utils.ValidacionDatos;
 
 public class Cine {
   public static void main(String[] args) {
 
     Scanner scan = new Scanner(System.in);
-    Integer choice = -1;
 
-    do {
-      Mosrtrar.mostrarMenuPrincipal();
+    Sala sala1 = new Sala(5, "Sala 1");
+    sala1.setPelicula("Joker");
+    Espectador esp1 = new Espectador("Mati", 31, "A", 1);
+    Espectador esp2 = new Espectador("Antonella", 32, "B", 1);
 
-      Integer opcion = Integer.parseInt(scan.nextLine());
+    List<Espectador> espectadroes = new ArrayList<>();
+    espectadroes.add(esp1);
+    espectadroes.add(esp2);
 
-      switch (opcion) {
-        case 0:
-          System.out.println("Fin del programa...");
-          System.exit(0);
-          break;
+    sala1.setEspectadores(espectadroes);
 
-        case 1:
-          System.out.println("Mostrando estado de Cine:");
-          System.exit(0);
-          break;
+    System.out.println(sala1);
 
-        case 2:
-          System.out.println("Creando sala:");
-          List<Espectador> espectadores = new ArrayList<>();
-          Sala sala1 = Inicializdores.crearSala(espectadores); // creada sala 1 con los atributos pedidos en la consigna
-          sala1.setPelicula("Joker");
+    System.out.println("Tipo: " + esp1.getTipo());
 
-        default:
-          System.out.println("Opción incorrecta.");
-          break;
-      }
-    } while (choice != 0);
+    Empleado emp1 = new Empleado("Luciano", 31, 50_000);
+    System.out.println(emp1);
+    emp1.setSueldo(100_000);
+    System.out.println(emp1);
+
+    Acomodador acom1 = new Acomodador("Claudio", 35, 30_000, sala1);
+    System.out.println(acom1);
+    acom1.setSueldo(50_000);
+    System.out.println(acom1);
+
+    // cargar espectador
+    Espectador esp3 = ValidacionDatos.crearEspectador();
+    if (esp3 != null)
+      espectadroes.add(esp3);
+    else
+      System.out.println("No se pudo agregar espectador");
+
+    System.out.println(sala1);
 
     scan.close();
   }

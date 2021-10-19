@@ -29,9 +29,13 @@ public class Sala {
     this.espectadores = espectadores;
   }
 
+  public String getNombre() {
+    return nombre;
+  }
+
   @Override
   public String toString() {
-    return "Salas [capacidad=" + capacidad + ", espectadores=" + espectadores.toString() + ", nombre=" + nombre
+    return "Sala [capacidad=" + capacidad + ", espectadores=" + espectadores.toString() + ", nombre=" + nombre
         + ", pelicula=" + pelicula + "]";
   }
 

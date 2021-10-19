@@ -19,4 +19,14 @@ public class Acomodador extends Empleado implements ParaAcomodadores {
     this.sala = sala;
   }
 
+  @Override
+  public String toString() {
+    return super.toString() + " es Acomodador [sala=" + sala.getNombre() + "]";
+  }
+
+  @Override
+  public String getTipo() {
+    return String.valueOf(this.getClass());
+  }
+
 }
