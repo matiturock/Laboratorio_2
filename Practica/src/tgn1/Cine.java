@@ -12,6 +12,8 @@ public class Cine {
 
     Sala sala1 = new Sala(5, "Sala 1");
     sala1.setPelicula("Joker");
+    System.out.println(sala1); // sin espectadores
+
     Espectador esp1 = new Espectador("Mati", 31, "A", 1);
     Espectador esp2 = new Espectador("Antonella", 32, "B", 1);
 
@@ -21,7 +23,7 @@ public class Cine {
 
     sala1.setEspectadores(espectadroes);
 
-    System.out.println(sala1);
+    System.out.println(sala1); // con espectadores
 
     System.out.println("Tipo: " + esp1.getTipo());
 

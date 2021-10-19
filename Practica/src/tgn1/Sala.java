@@ -35,8 +35,13 @@ public class Sala {
 
   @Override
   public String toString() {
-    return "Sala [capacidad=" + capacidad + ", espectadores=" + espectadores.toString() + ", nombre=" + nombre
-        + ", pelicula=" + pelicula + "]";
+    if (espectadores != null || espectadores.size() != 0) {
+      return "Sala [capacidad=" + capacidad + ", espectadores=" + espectadores.toString() + ", nombre=" + nombre
+          + ", pelicula=" + pelicula + "]";
+    }
+    return "Sala [capacidad=" + capacidad + ", espectadores=No hay espectadores" + ", nombre=" + nombre + ", pelicula="
+        + pelicula + "]";
+
   }
 
 }
