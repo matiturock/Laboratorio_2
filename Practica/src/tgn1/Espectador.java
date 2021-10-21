@@ -14,7 +14,7 @@ public class Espectador extends Persona {
     this.butaca = butaca;
   }
 
-  public Integer getSilla() {
+  public Integer getButaca() {
     return butaca;
   }
 

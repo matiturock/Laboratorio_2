@@ -2,17 +2,14 @@ package tgn1;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 import tgn1.utils.ValidacionDatos;
 
 public class Cine {
   public static void main(String[] args) {
 
-    Scanner scan = new Scanner(System.in);
-
-    Sala sala1 = new Sala(5, "Sala 1");
-    sala1.setPelicula("Joker");
-    System.out.println(sala1); // sin espectadores
+    Sala sala1 = new Sala(3, "Sala 01");
+    sala1.setPelicula("Jocker");
+    System.out.println(sala1);
 
     Espectador esp1 = new Espectador("Mati", 31, "A", 1);
     Espectador esp2 = new Espectador("Antonella", 32, "B", 1);
@@ -46,6 +43,5 @@ public class Cine {
 
     System.out.println(sala1);
 
-    scan.close();
   }
 }
