@@ -39,9 +39,12 @@ public class Sala {
       return "Sala [capacidad=" + capacidad + ", espectadores=SIN ESPECTADORES CARGADOS" + ", nombre=" + nombre
           + ", pelicula=" + pelicula + "]";
     }
+    if (espectadores.size() == 0) {
+      return "Sala [capacidad=" + capacidad + ", espectadores=ESPECTADORES CARGADOS = 0" + ", nombre=" + nombre
+          + ", pelicula=" + pelicula + "]";
+    }
     return "Sala [capacidad=" + capacidad + ", espectadores=" + espectadores.toString() + ", nombre=" + nombre
         + ", pelicula=" + pelicula + "]";
-
   }
 
 }

@@ -29,7 +29,7 @@ public abstract class Persona {
 
   @Override
   public String toString() {
-    return "Persona [edad=" + edad + ", nombre=" + nombre + "]";
+    return "\nPersona [edad=" + edad + ", nombre=" + nombre + "]";
   }
 
 }

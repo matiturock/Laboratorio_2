@@ -1,0 +1,105 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Launch Current File",
+      "request": "launch",
+      "mainClass": "${file}"
+    },
+    {
+      "type": "java",
+      "name": "Launch ApiJava",
+      "request": "launch",
+      "mainClass": "ApiJava",
+      "projectName": "Laboratorio_2_73052940"
+    },
+    {
+      "type": "java",
+      "name": "Launch App",
+      "request": "launch",
+      "mainClass": "App",
+      "projectName": "Laboratorio_2_73052940"
+    },
+    {
+      "type": "java",
+      "name": "Launch AppTest",
+      "request": "launch",
+      "mainClass": "AppTest",
+      "projectName": "Laboratorio_2_73052940"
+    },
+    {
+      "type": "java",
+      "name": "Launch Combinatoria",
+      "request": "launch",
+      "mainClass": "Combinatoria",
+      "projectName": "Laboratorio_2_73052940"
+    },
+    {
+      "type": "java",
+      "name": "Launch AdivinaElNumero",
+      "request": "launch",
+      "mainClass": "desafio10.AdivinaElNumero",
+      "projectName": "Laboratorio_2_73052940"
+    },
+    {
+      "type": "java",
+      "name": "Launch AdivinaElNumeroScanner",
+      "request": "launch",
+      "mainClass": "desafio10.AdivinaElNumeroScanner",
+      "projectName": "Laboratorio_2_73052940"
+    },
+    {
+      "type": "java",
+      "name": "Launch UsoDeCuenta",
+      "request": "launch",
+      "mainClass": "desafio11.UsoDeCuenta",
+      "projectName": "Laboratorio_2_73052940"
+    },
+    {
+      "type": "java",
+      "name": "Launch Archivo",
+      "request": "launch",
+      "mainClass": "desafio12.Archivo",
+      "projectName": "Laboratorio_2_73052940"
+    },
+    {
+      "type": "java",
+      "name": "Launch RaizScanner",
+      "request": "launch",
+      "mainClass": "desafio8.RaizScanner",
+      "projectName": "Laboratorio_2_73052940"
+    },
+    {
+      "type": "java",
+      "name": "Launch PesoIdealDeUnaPersona",
+      "request": "launch",
+      "mainClass": "desafio9.PesoIdealDeUnaPersona",
+      "projectName": "Laboratorio_2_73052940"
+    },
+    {
+      "type": "java",
+      "name": "Launch TestFacultad",
+      "request": "launch",
+      "mainClass": "facultad.TestFacultad",
+      "projectName": "Laboratorio_2_73052940"
+    },
+    {
+      "type": "java",
+      "name": "Launch Cine",
+      "request": "launch",
+      "mainClass": "tgn1.Cine",
+      "projectName": "Laboratorio_2_73052940"
+    },
+    {
+      "type": "java",
+      "name": "Launch TestSobreescritura",
+      "request": "launch",
+      "mainClass": "udemy.sobreescritura.test.TestSobreescritura",
+      "projectName": "Laboratorio_2_73052940"
+    }
+  ]
+}
