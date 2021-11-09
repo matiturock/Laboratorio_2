@@ -1,4 +1,4 @@
-package udemy.sobreescritura;
+package udemy.castingobjetos;
 
 public class Gerente extends Empleado {
   private String departamento;

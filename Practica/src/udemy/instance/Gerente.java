@@ -1,4 +1,4 @@
-package udemy.sobreescritura;
+package udemy.instance;
 
 public class Gerente extends Empleado {
   private String departamento;
