@@ -1,11 +1,13 @@
 package udemy.excepciones1.test;
 
+import udemy.excepciones1.aritmetica.Aritmetica;
+
 public class TestExcepciones {
   public static void main(String[] args) {
     Integer resultado = null;
 
     try {
-      resultado = 10 / 0;
+      resultado = Aritmetica.division(10, 0);
     } catch (Exception e) {
       e.printStackTrace();
     }
