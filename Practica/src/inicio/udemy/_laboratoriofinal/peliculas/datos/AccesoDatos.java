@@ -4,33 +4,23 @@ import java.util.ArrayList;
 import java.util.List;
 
 import inicio.udemy._laboratoriofinal.peliculas.domain.Pelicula;
+import inicio.udemy._laboratoriofinal.peliculas.excepciones.AccesoDatosExcepciones;
+import inicio.udemy._laboratoriofinal.peliculas.excepciones.EscrituraDatosExcepciones;
+import inicio.udemy._laboratoriofinal.peliculas.excepciones.LecturaDatosExcepciones;
 
 /**
  * Contiene las operaciones a ejecutar en archivo.txt
  */
 public interface AccesoDatos {
-  public static boolean existe(String nombrePelicula) {
-    return false;
-  }
+  boolean existe(String nombreRecurso) throws AccesoDatosExcepciones;
 
-  public static List<Pelicula> listar(String nombre) {
-    List<Pelicula> listaPeliculas = new ArrayList<>();
-    return listaPeliculas;
-  }
+  List<Pelicula> listar(String nombreRecurso) throws LecturaDatosExcepciones;
 
-  public static void escribir(Pelicula pelicula, String nombreArchivo, Boolean anexar) {
+  void escribir(Pelicula pelicula, String nombreRecurso, Boolean anexar) throws EscrituraDatosExcepciones;
 
-  }
+  String buscar(String nombreRecurso, String buscar) throws LecturaDatosExcepciones;
 
-  public static String buscar(String nombreArchivo, String buscar) {
-    return null;
-  }
+  void crear(String nombreRecurso) throws AccesoDatosExcepciones;
 
-  public static void crear(String nombreArchivo) {
-
-  }
-
-  public static void borrar(String nombreArchivo) {
-
-  }
+  void borrar(String nombreRecurso) throws AccesoDatosExcepciones;
 }
