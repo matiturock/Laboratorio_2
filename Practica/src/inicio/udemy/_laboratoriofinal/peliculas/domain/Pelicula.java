@@ -1,5 +1,9 @@
-package _laboratoriofinal.peliculas;
+package inicio.udemy._laboratoriofinal.peliculas.domain;
 
+/**
+ * Representa los objetos pelicula utilizados en la aplicacion catalogo de
+ * peliculas
+ */
 public class Pelicula {
   private String nombre;
 

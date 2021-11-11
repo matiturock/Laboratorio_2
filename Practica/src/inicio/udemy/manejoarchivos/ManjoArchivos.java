@@ -56,6 +56,8 @@ public class ManjoArchivos {
         lectura = entrada.readLine();
       }
 
+      entrada.close();
+
     } catch (FileNotFoundException e) {
       e.printStackTrace();
     } catch (IOException e) {

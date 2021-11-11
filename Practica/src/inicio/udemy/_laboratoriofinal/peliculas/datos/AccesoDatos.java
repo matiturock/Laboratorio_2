@@ -1,9 +1,9 @@
-package _laboratoriofinal.peliculas.datos;
+package inicio.udemy._laboratoriofinal.peliculas.datos;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import _laboratoriofinal.peliculas.Pelicula;
+import inicio.udemy._laboratoriofinal.peliculas.domain.Pelicula;
 
 /**
  * Contiene las operaciones a ejecutar en archivo.txt
