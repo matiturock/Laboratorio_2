@@ -9,7 +9,7 @@ public interface ICatalogoPeliculas {
     // automático el "public static final"
     public static final String NOMBRE_RECURSO = "peliculas.txt";
 
-    void agregarPelicula(String nombreRecurso);
+    void agregarPelicula(String nombrePelicula);
 
     void listarPeliculas();
 
