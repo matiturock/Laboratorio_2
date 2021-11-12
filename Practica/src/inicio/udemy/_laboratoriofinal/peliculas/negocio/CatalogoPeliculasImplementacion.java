@@ -55,7 +55,7 @@ public class CatalogoPeliculasImplementacion implements ICatalogoPeliculas {
         try {
             resultado = this.datos.buscar(NOMBRE_RECURSO, buscar);
             if (resultado != null)
-                System.out.println("Pelicula encontrada: " + resultado);
+                System.out.println(resultado);
             else
                 System.out.println("Pelicula no encontrada");
 

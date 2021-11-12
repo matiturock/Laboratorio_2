@@ -83,7 +83,6 @@ public class AccesoDatosImplementacionArchivo implements IAccesoDatos {
             while (linea != null) {
                 if (buscar != null && buscar.equalsIgnoreCase(buscar)) {
                     resultado = String.format("Pelicula '%s' encontrada en el índice %d", linea, i);
-                    entrada.close();
                 }
                 i++;
                 linea = entrada.readLine();
