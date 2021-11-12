@@ -77,25 +77,26 @@ public class AccesoDatosImplementacionArchivo implements IAccesoDatos {
 
         try {
             var entrada = new BufferedReader(new FileReader(archivo));
-            String linea = entrada.readLine();
-            int i = 1;
+            String salida = null;
+            salida = entrada.readLine();
+            int indice = 1;
 
-            while (linea != null) {
-                if (buscar != null && buscar.equalsIgnoreCase(buscar)) {
-                    resultado = String.format("Pelicula '%s' encontrada en el índice %d", linea, i);
+            while (salida != null) {
+                if (buscar != null && buscar.equalsIgnoreCase(salida)) {
+                    resultado = String.format("Pelicula '%s' encontrada en el índice %d", salida, indice);
                 }
-                i++;
-                linea = entrada.readLine();
+                salida = entrada.readLine();
+                indice++;
             }
 
             entrada.close();
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();
-            throw new LecturaDatosExcepciones("Excepción al buscar en archivo: " + e.getMessage());
+            throw new LecturaDatosExcepciones("Excepción al buscar pelicula: " + e.getMessage());
         } catch (IOException e) {
             e.printStackTrace();
-            throw new LecturaDatosExcepciones("Excepción al buscar en archivo: " + e.getMessage());
+            throw new LecturaDatosExcepciones("Excepción al buscar pelicula: " + e.getMessage());
         }
 
         return resultado;

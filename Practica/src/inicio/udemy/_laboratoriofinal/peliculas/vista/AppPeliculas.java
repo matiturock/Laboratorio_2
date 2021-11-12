@@ -30,52 +30,66 @@ import inicio.udemy._laboratoriofinal.peliculas.negocio.ICatalogoPeliculas;
 public class AppPeliculas {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int opcion = -1;
+        Integer opcion = -1;
         // String nombreArchivo = "C:\\catalogo_peliculas\\peliculas.txt";
         ICatalogoPeliculas catalogo = new CatalogoPeliculasImplementacion();
 
         while (opcion != 0) {
-            System.out.println("\nSISTEMA DE GESTION DE BIBLIOTECA");
-            System.out.println("================================");
-            System.out.println("Elige una opción:");
-            System.out.println("-> 1: Iniciar catálogo de películas");
-            System.out.println("-> 2: Agregar película");
-            System.out.println("-> 3: Listar películas");
-            System.out.println("-> 4: Buscar película");
-            System.out.println("-> 0: Salir");
+            mostrarOpciones();
 
             // se recomienda usar el "nextLine()" porque los otros métodos no consumen todos
             // los caracteres, como ser el saltoe de línea
-            opcion = Integer.parseInt(scanner.nextLine());
-
-            switch (opcion) {
-            case 1:
-                System.out.println("Iniciado catalogo de películas");
-                catalogo.iniciarArchivo();
-                break;
-            case 2:
-                System.out.println("Ingresa el nombre de la pelicula:");
-                String nomrePelicula = scanner.nextLine();
-                catalogo.agregarPelicula(nomrePelicula);
-                break;
-            case 3:
-                System.out.println("Listado de películas:");
-                catalogo.listarPeliculas();
-                break;
-            case 4:
-                System.out.println("Ingresa el nombre de la plícula a buscar:");
-                String buscar = scanner.nextLine();
-                catalogo.buscarPelicula(buscar);
-                break;
-            case 0:
-                System.out.println("Saliendo del programa");
-                break;
-            default:
-                System.err.println("Opción incorrecta...");
-                break;
+            try {
+                opcion = Integer.parseInt(scanner.nextLine());
+            } catch (Exception e) {
+                e.printStackTrace();
+                opcion = -1;
             }
+
+            evaluarOpcion(opcion, catalogo, scanner);
         }
 
         scanner.close();
+        System.out.println("Fin del programa");
+    }
+
+    private static void evaluarOpcion(int opcion, ICatalogoPeliculas catalogo, Scanner scanner) {
+        switch (opcion) {
+        case 1:
+            System.out.println("Iniciado catalogo de películas");
+            catalogo.iniciarArchivo();
+            break;
+        case 2:
+            System.out.println("Ingresa el nombre de la pelicula:");
+            String nomrePelicula = scanner.nextLine();
+            catalogo.agregarPelicula(nomrePelicula);
+            break;
+        case 3:
+            System.out.println("Listado de películas:");
+            catalogo.listarPeliculas();
+            break;
+        case 4:
+            System.out.println("Ingresa el nombre de la plícula a buscar:");
+            String buscar = scanner.nextLine();
+            catalogo.buscarPelicula(buscar);
+            break;
+        case 0:
+            // Fin del programa
+            break;
+        default:
+            System.err.println("Opción incorrecta...");
+            break;
+        }
+    }
+
+    private static void mostrarOpciones() {
+        System.out.println("\nSISTEMA DE GESTION DE BIBLIOTECA");
+        System.out.println("================================");
+        System.out.println("Elige una opción:");
+        System.out.println("-> 1: Iniciar catálogo de películas");
+        System.out.println("-> 2: Agregar película");
+        System.out.println("-> 3: Listar películas");
+        System.out.println("-> 4: Buscar película");
+        System.out.println("-> 0: Salir");
     }
 }
