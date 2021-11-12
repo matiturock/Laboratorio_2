@@ -1,0 +1,1 @@
+punto de entrada -> vista/AppPeliculas.java
